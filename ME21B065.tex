@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Information Theory}
+\author{Govind G S}
+\date{June 26 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}\
+
+Information theory is the scientific study of the quantification, storage, and communication of digital information.[1] The field was fundamentally established by the works of \href{https://en.wikipedia.org/wiki/Harry_Nyquist}{Harry Nyquist} and \href{https://en.wikipedia.org/wiki/Ralph_Hartley}{Ralph Hartley}, in the 1920s, and \href{https://en.wikipedia.org/wiki/Claude_Shannon}{Claude Shannon} in the 1940s. The field is at the intersection of probability theory, statistics, computer science, statistical mechanics, information engineering, and electrical engineering. 
+
+\section{Entropy}\
+
+In information theory, the entropy of a random variable is the average level of "information", "surprise", or "uncertainty" inherent to the variable's possible outcomes.
+
+\subsection{Equation}
+
+Given a discrete random variable $X$, which takes values in the alphabet $\mathcal{X}$ and is distributed according to $p:{\mathcal{X}}\to [0,1]$: 
+
+\[
+\textrm{H} (X) = - \sum_{i=1}^{n} {\textrm{P} (x_{i})\log \textrm{P} (x_{i})}
+\]
+
+The symbols used and their meaning are referenced in Table~\ref{tab:SiE}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|l|}
+\hline
+Symbol & Meaning \\\hline
+H & Entropy \\
+X & Discrete random variable \\
+$x_i$ & Possible values of X \\
+P & Probability Mass Function of each $x_i$ \\
+\hline
+\end{tabular}
+\caption{\label{tab:SiE}Symbols used in the Equation26 }
+\end{table}
+
+\subsection{Base of log}
+
+The choice of base for $\log$ , the logarithm, varies for different applications. Base 2 gives the unit of bits (or "shannons"), while base e gives "natural units" nat, and base 10 gives units of "dits", "bans", or "hartleys". An equivalent definition of entropy is the expected value of the self-information of a variable.
+
+\section{The Core Idea}
+
+The core idea of information theory is that the "informational value" of a communicated message depends on the degree to which the content of the message is surprising. If a highly likely event occurs, the message carries very little information. On the other hand, if a highly unlikely event occurs, the message is much more informative. For instance, the knowledge that some particular number will not be the winning number of a lottery provides very little information, because any particular chosen number will almost certainly not win. However, knowledge that a particular number will win a lottery has high informational value because it communicates the outcome of a very low probability event
+
+\section{Properties}
+The Shannon entropy satisfies the following properties, for some of which it is useful to interpret entropy as the expected amount of information learned (or uncertainty eliminated) by revealing the value of a random variable X:
+\begin{enumerate}
+    \item Adding or removing an event with probability zero does not contribute to the entropy: 
+    
+    $ \textrm{H} _{n+1}(p_{1},\ldots ,p_{n},0) = \textrm{H} _{n}(p_{1},\ldots ,p_{n}) $.
+    
+    \item If X and Y are two independent random variables, then knowing the value of Y doesn't influence our knowledge of the value of X (since the two don't influence each other by independence):
+    
+    $ \textrm{H} (X|Y) = \textrm {H} (X). $
+    
+    \item The entropy of two simultaneous events is no more than the sum of the entropies of each individual event i.e.,  $ \textrm{H} (X,Y) \leq \textrm{H} (X) + \textrm{H} (Y) $, with equality if and only if the two events are independent.
+    
+    \item The entropy or the amount of information revealed by evaluating (X,Y) (that is, evaluating X and Y simultaneously) is equal to the information revealed by conducting two consecutive experiments: first evaluating the value of Y, then revealing the value of X given that you know the value of Y. This may be written as:
+    $ \mathrm {H} (X,Y)=\mathrm {H} (X|Y)+\mathrm {H} (Y)=\mathrm {H} (Y|X)+\mathrm {H} (X). $
+\end{enumerate}
+
+
+\end{document}
